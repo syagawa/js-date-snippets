@@ -1,4 +1,12 @@
-const dayMap: any = {
+
+interface Language {
+  ja?: string
+  en?: string
+}
+type KeyValueLanguage = { [key: number]: Language}
+
+
+const dayMap: KeyValueLanguage = {
   0: {
     ja: "日",
     en: "Sun"
@@ -29,7 +37,7 @@ const dayMap: any = {
   },
 }
 
-const monthMap: any = {
+const monthMap: KeyValueLanguage = {
   0: {
     ja: "",
     en: "Jan"

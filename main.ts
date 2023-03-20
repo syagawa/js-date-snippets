@@ -128,6 +128,9 @@ export const makeDateTime = ( date: Date | string | number ): {
 
 const isInvalidDate = ( date: any ) => {
   try{
+    if(date === true || date === false || date === null){
+      return true;
+    }
     const d = new Date(date);
     if(d.toString() === "Invalid Date"){
       return true;
@@ -144,7 +147,7 @@ export const makeDatetimeStringForDisplay = ( d: string | number | Date): object
     "yyyy/MM/dd HH:mm:ss": "",
     "yyyy/MM/dd HH:mm": ""
   }
-  if(d === null || isInvalidDate(d)){
+  if(isInvalidDate(d)){
     return obj
   }
 

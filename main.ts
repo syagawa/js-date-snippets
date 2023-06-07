@@ -1,4 +1,3 @@
-
 interface Language {
   ja?: string
   en?: string
@@ -107,7 +106,7 @@ export const makeDateTime = ( date: Date | string | number ): {
 
   const day = dayMap[d.getDay()]
 
-  const monthshort = monthMap[d.getMonth()]?.en
+  const monthshort = String(monthMap[d.getMonth()]?.en)
 
   const hours = String(d.getHours()).padStart(2, "0")
   const minutes = String(d.getMinutes()).padStart(2, "0")
@@ -161,4 +160,3 @@ export const makeDatetimeStringForDisplay = ( d: string | number | Date): object
   return obj
     
 }
-

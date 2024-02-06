@@ -29,7 +29,7 @@ const dayMap = {
     ja: "土",
     en: "Sat"
   },
-}
+};
 
 const monthMap = {
   0: {
@@ -80,22 +80,22 @@ const monthMap = {
     ja: "",
     en: "Dec"
   },
-}
+};
 
 export const makeDateTime = (date) => {
-  const d = new Date(date)
+  const d = new Date(date);
 
-  const year = String(d.getFullYear()).padStart(4, "0")
-  const month = String(d.getMonth() + 1).padStart(2, "0")
-  const datedate = String(d.getDate()).padStart(2, "0")
+  const year = String(d.getFullYear()).padStart(4, "0");
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const datedate = String(d.getDate()).padStart(2, "0");
 
-  const day = dayMap[d.getDay()]
+  const day = dayMap[d.getDay()];
 
-  const monthshort = String(monthMap[d.getMonth()]?.en)
+  const monthshort = String(monthMap[d.getMonth()]?.en);
 
-  const hours = String(d.getHours()).padStart(2, "0")
-  const minutes = String(d.getMinutes()).padStart(2, "0")
-  const seconds = String(d.getSeconds()).padStart(2, "0")
+  const hours = String(d.getHours()).padStart(2, "0");
+  const minutes = String(d.getMinutes()).padStart(2, "0");
+  const seconds = String(d.getSeconds()).padStart(2, "0");
 
   return {
     year,
@@ -107,7 +107,7 @@ export const makeDateTime = (date) => {
     seconds,
     day: day,
     d
-  }
+  };
 }
 
 const isInvalidDate = ( date ) => {
@@ -130,7 +130,7 @@ export const makeDatetimeStringForDisplay = ( d ) => {
   const obj = {
     "yyyy/MM/dd HH:mm:ss": "",
     "yyyy/MM/dd HH:mm": ""
-  }
+  };
   if(isInvalidDate(d)){
     return obj
   }
@@ -139,9 +139,9 @@ export const makeDatetimeStringForDisplay = ( d ) => {
     return obj
   }
 
-  const o = makeDateTime(d)
-  obj["yyyy/MM/dd HH:mm:ss"] = `${o.year}/${o.month}/${o.date} ${o.hours}:${o.minutes}:${o.seconds}`
-  obj["yyyy/MM/dd HH:mm"] = `${o.year}/${o.month}/${o.date} ${o.hours}:${o.minutes}`
-  return obj
+  const o = makeDateTime(d);
+  obj["yyyy/MM/dd HH:mm:ss"] = `${o.year}/${o.month}/${o.date} ${o.hours}:${o.minutes}:${o.seconds}`;
+  obj["yyyy/MM/dd HH:mm"] = `${o.year}/${o.month}/${o.date} ${o.hours}:${o.minutes}`;
+  return obj;
     
 }

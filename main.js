@@ -96,6 +96,8 @@ export const makeDateTime = (date) => {
   const hours = String(d.getHours()).padStart(2, "0");
   const minutes = String(d.getMinutes()).padStart(2, "0");
   const seconds = String(d.getSeconds()).padStart(2, "0");
+  const milliseconds = String(d.getMilliseconds()).padStart(3, "0");
+
 
   return {
     year,
@@ -105,6 +107,7 @@ export const makeDateTime = (date) => {
     hours,
     minutes,
     seconds,
+    milliseconds,
     day: day,
     d
   };
